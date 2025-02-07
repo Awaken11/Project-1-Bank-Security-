@@ -1,0 +1,90 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
+
+const BankSecurityProject = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 p-6">
+      <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-4xl font-bold text-blue-600">Bank Security Project</h1>
+        <p className="text-lg text-gray-600 mt-2">
+          Enhancing security and designing efficient banking solutions.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Feature Card 1 */}
+        <Card className="shadow-lg">
+          <CardContent>
+            <h2 className="text-xl font-semibold">User Authentication</h2>
+            <p className="text-gray-600 mt-2">
+              Implement secure login systems with multi-factor authentication.
+            </p>
+            <Button className="mt-4 w-full">Learn More</Button>
+          </CardContent>
+        </Card>
+
+        {/* Feature Card 2 */}
+        <Card className="shadow-lg">
+          <CardContent>
+            <h2 className="text-xl font-semibold">Data Encryption</h2>
+            <p className="text-gray-600 mt-2">
+              Protect sensitive user data with end-to-end encryption.
+            </p>
+            <Button className="mt-4 w-full">Learn More</Button>
+          </CardContent>
+        </Card>
+
+        {/* Feature Card 3 */}
+        <Card className="shadow-lg">
+          <CardContent>
+            <h2 className="text-xl font-semibold">Fraud Detection</h2>
+            <p className="text-gray-600 mt-2">
+              Use AI-driven algorithms to detect and prevent fraudulent activity.
+            </p>
+            <Button className="mt-4 w-full">Learn More</Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Contact Form */}
+      <motion.div
+        className="mt-12 bg-white p-6 rounded-lg shadow-md max-w-md mx-auto"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-2xl font-bold text-center mb-4">Contact Us</h2>
+        <form>
+          <Input
+            type="text"
+            placeholder="Your Name"
+            className="mb-4 w-full"
+          />
+          <Input
+            type="email"
+            placeholder="Your Email"
+            className="mb-4 w-full"
+          />
+          <Input
+            type="text"
+            placeholder="Your Message"
+            className="mb-4 w-full"
+          />
+          <Button type="submit" className="w-full">
+            Submit
+          </Button>
+        </form>
+      </motion.div>
+    </div>
+  );
+};
+
+export default BankSecurityProject;
