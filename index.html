@@ -1,188 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bank Security Project</title>
-
-  <!-- Include React and ReactDOM -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-
-  <!-- Include Babel for JSX support -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- CSS Styling -->
-  <style>
-    .container {
-      font-family: Arial, sans-serif;
-      margin: 0 auto;
-      padding: 20px;
-      max-width: 1200px;
-      background: linear-gradient(to right, #007BFF, #E6F7FF);
-      color: #333;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      color: #fff;
-    }
-
-    .header p {
-      font-size: 1.2rem;
-      color: #f0f0f0;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s;
-    }
-
-    .card:hover {
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .card h2 {
-      font-size: 1.5rem;
-      color: #007BFF;
-    }
-
-    .card p {
-      font-size: 1rem;
-      color: #555;
-      margin: 10px 0;
-    }
-
-    .card button {
-      background: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .card button:hover {
-      background: #0056b3;
-    }
-
-    .contact {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 40px auto 0;
-      max-width: 500px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact h2 {
-      font-size: 2rem;
-      color: #007BFF;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact input,
-    .contact textarea {
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .contact button {
-      background: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .contact button:hover {
-      background: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackBank - Secure & Modern Banking</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Root element for React -->
-  <div id="root"></div>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">Black Bank</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Personal Banking</a></li>
+                <li><a href="#">Business Banking</a></li>
+                <li><a href="#">Loans & Credit Cards</a></li>
+                <li><a href="#">Investments</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <button class="login-btn">Login</button>
+    </header>
 
-  <!-- Your React Code -->
-  <script type="text/babel">
-    // Removed the import statements since React and ReactDOM are globally available
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Secure & Modern Banking for Your Future</h1>
+        <p>Experience seamless banking with top-tier security and convenience.</p>
+        <button class="cta">Open an Account</button>
+        <button class="cta">Apply for a Loan</button>
+    </section>
 
-    const BankSecurityProject = () => {
-      return (
-        <div className="container">
-          {/* Header Section */}
-          <header className="header">
-            <h1>Bank Security Project</h1>
-            <p>A modern platform for secure and efficient banking solutions.</p>
-          </header>
-
-          {/* Feature Cards Section */}
-          <section className="features">
-            <div className="card">
-              <h2>User Authentication</h2>
-              <p>Implement secure login systems with multi-factor authentication.</p>
-              <button>Learn More</button>
-            </div>
-
-            <div className="card">
-              <h2>Data Encryption</h2>
-              <p>Protect sensitive user data with end-to-end encryption.</p>
-              <button>Learn More</button>
-            </div>
-
-            <div className="card">
-              <h2>Fraud Detection</h2>
-              <p>Use AI-driven algorithms to detect and prevent fraudulent activity.</p>
-              <button>Learn More</button>
-            </div>
-          </section>
-
-          {/* Contact Form Section */}
-          <section className="contact">
-            <h2>Contact Us</h2>
-            <form>
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-              <textarea placeholder="Your Message"></textarea>
-              <button type="submit">Submit</button>
-            </form>
-          </section>
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service-card">
+            <h2>Check Balance</h2>
+            <p>View your account balance instantly.</p>
         </div>
-      );
-    };
+        <div class="service-card">
+            <h2>Transfer Money</h2>
+            <p>Send money quickly and securely.</p>
+        </div>
+        <div class="service-card">
+            <h2>Pay Bills</h2>
+            <p>Manage all your payments in one place.</p>
+        </div>
+    </section>
 
-    // Render the component into the 'root' DOM element
-    ReactDOM.render(<BankSecurityProject />, document.getElementById("root"));
-  </script>
+    <!-- Security & Support Section -->
+    <section class="security">
+        <h2>Stay Secure with Black Bank</h2>
+        <p>We prioritize your security with two-factor authentication and advanced encryption.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 FutureBank. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
