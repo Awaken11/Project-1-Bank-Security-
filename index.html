@@ -1,99 +1,188 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Security Project</title>
 
-const BankSecurityProject = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-white to-blue-100 p-6">
-      <motion.div
-        className="text-center mb-10"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-5xl font-extrabold text-blue-800">Bank Security Project</h1>
-        <p className="text-lg text-gray-700 mt-2">
-          A modern platform for secure and efficient banking solutions.
-        </p>
-      </motion.div>
+  <!-- Include React and ReactDOM -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Feature Card 1 */}
-        <Card className="shadow-lg border border-gray-200">
-          <CardContent>
-            <h2 className="text-xl font-semibold text-blue-700">User Authentication</h2>
-            <p className="text-gray-600 mt-2">
-              Implement secure login systems with multi-factor authentication.
-            </p>
-            <Button className="mt-4 w-full bg-blue-600 text-white hover:bg-blue-700">
-              Learn More
-            </Button>
-          </CardContent>
-        </Card>
+  <!-- Include Babel for JSX support -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-        {/* Feature Card 2 */}
-        <Card className="shadow-lg border border-gray-200">
-          <CardContent>
-            <h2 className="text-xl font-semibold text-blue-700">Data Encryption</h2>
-            <p className="text-gray-600 mt-2">
-              Protect sensitive user data with end-to-end encryption.
-            </p>
-            <Button className="mt-4 w-full bg-blue-600 text-white hover:bg-blue-700">
-              Learn More
-            </Button>
-          </CardContent>
-        </Card>
+  <!-- CSS Styling -->
+  <style>
+    .container {
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1200px;
+      background: linear-gradient(to right, #007BFF, #E6F7FF);
+      color: #333;
+    }
 
-        {/* Feature Card 3 */}
-        <Card className="shadow-lg border border-gray-200">
-          <CardContent>
-            <h2 className="text-xl font-semibold text-blue-700">Fraud Detection</h2>
-            <p className="text-gray-600 mt-2">
-              Use AI-driven algorithms to detect and prevent fraudulent activity.
-            </p>
-            <Button className="mt-4 w-full bg-blue-600 text-white hover:bg-blue-700">
-              Learn More
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-      {/* Contact Form */}
-      <motion.div
-        className="mt-12 bg-white p-6 rounded-lg shadow-md max-w-md mx-auto border border-gray-300"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-2xl font-bold text-center text-blue-800 mb-4">Contact Us</h2>
-        <form>
-          <Input
-            type="text"
-            placeholder="Your Name"
-            className="mb-4 w-full border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          />
-          <Input
-            type="email"
-            placeholder="Your Email"
-            className="mb-4 w-full border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          />
-          <Input
-            type="text"
-            placeholder="Your Message"
-            className="mb-4 w-full border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          />
-          <Button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-          >
-            Submit
-          </Button>
-        </form>
-      </motion.div>
-    </div>
-  );
-};
+    .header h1 {
+      font-size: 2.5rem;
+      color: #fff;
+    }
 
-export default BankSecurityProject;
+    .header p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      color: #007BFF;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .card button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+    }
+
+    .contact {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 40px auto 0;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      color: #007BFF;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact input,
+    .contact textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Root element for React -->
+  <div id="root"></div>
+
+  <!-- Your React Code -->
+  <script type="text/babel">
+    // Removed the import statements since React and ReactDOM are globally available
+
+    const BankSecurityProject = () => {
+      return (
+        <div className="container">
+          {/* Header Section */}
+          <header className="header">
+            <h1>Bank Security Project</h1>
+            <p>A modern platform for secure and efficient banking solutions.</p>
+          </header>
+
+          {/* Feature Cards Section */}
+          <section className="features">
+            <div className="card">
+              <h2>User Authentication</h2>
+              <p>Implement secure login systems with multi-factor authentication.</p>
+              <button>Learn More</button>
+            </div>
+
+            <div className="card">
+              <h2>Data Encryption</h2>
+              <p>Protect sensitive user data with end-to-end encryption.</p>
+              <button>Learn More</button>
+            </div>
+
+            <div className="card">
+              <h2>Fraud Detection</h2>
+              <p>Use AI-driven algorithms to detect and prevent fraudulent activity.</p>
+              <button>Learn More</button>
+            </div>
+          </section>
+
+          {/* Contact Form Section */}
+          <section className="contact">
+            <h2>Contact Us</h2>
+            <form>
+              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Your Email" />
+              <textarea placeholder="Your Message"></textarea>
+              <button type="submit">Submit</button>
+            </form>
+          </section>
+        </div>
+      );
+    };
+
+    // Render the component into the 'root' DOM element
+    ReactDOM.render(<BankSecurityProject />, document.getElementById("root"));
+  </script>
+</body>
+</html>
